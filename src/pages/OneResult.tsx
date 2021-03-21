@@ -32,7 +32,6 @@ export const OneResult: React.FC = () => {
       setToukenData(res);
     };
     func();
-    console.log("test");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
