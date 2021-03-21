@@ -1,0 +1,292 @@
+$red: #a22041;
+$deep_red: #530f20;
+$white: #fef4f4;
+$purple: #65318e;
+$deep_purple: #4a0281;
+$green: #028760;
+$light_green: #49df03;
+
+html {
+  font-family: "ヒラギノ明朝 ProN", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("../images/washi.jpeg");
+}
+
+li {
+  list-style: none;
+}
+
+.top-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 9em;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 50%;
+  height: 100%;
+  margin: 3em auto;
+  img {
+    width: 100%;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+//mixin
+@mixin btn-hover {
+  background-color: $white;
+  color: $deep_purple;
+  border: 1px solid $deep_purple;
+  transition: 0.3s;
+}
+
+@mixin container {
+  background-color: $purple;
+  border-radius: 10px;
+  text-align: center;
+  color: $white;
+}
+
+// ヘッダー
+#header-container {
+  background-color: $red;
+  color: $white;
+  padding: 10px 10px;
+  h1 {
+    display: inline-block;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $deep_red;
+    transition: 0.3s;
+  }
+  ul {
+    font-size: 24px;
+    float: right;
+    color: $white;
+    margin: 5px 10px;
+  }
+  li {
+    margin: 0px 20px;
+    float: left;
+    list-style: none;
+  }
+}
+
+//フッター
+.footer-container {
+  position: absolute;
+  height: 9em;
+  bottom: 0;
+  width: 100%;
+  background-color: $red;
+  padding: 10px 0px;
+  color: $white;
+  text-align: center;
+  a {
+    color: $white;
+    &:hover {
+      color: $deep_red;
+      transition: 0.3s;
+    }
+  }
+}
+
+//topページ
+.modes-container {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.mode-container {
+  @include container();
+  margin: 5px 10px;
+  padding: 10px 15px;
+  padding-bottom: 24px;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  p {
+    margin-bottom: 14px;
+    font-size: 1.2em;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    background-color: $deep_purple;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 1em;
+    &:hover {
+      @include btn-hover();
+    }
+  }
+}
+
+//inputページ
+.input-page {
+  @include container();
+  padding: 1em 0;
+  h1 {
+    margin: 5% 0;
+    font-size: 2em;
+  }
+  .error {
+    color: $light_green;
+  }
+  input,
+  select {
+    margin-bottom: 1em;
+    height: 2.3em;
+    width: 40%;
+    border-color: $deep_purple;
+    border-radius: 10px;
+    padding: 0 2%;
+    color: $deep_purple;
+  }
+  input {
+    margin-bottom: 10%;
+  }
+  .submit-btn {
+    margin-top: 10%;
+    font-size: 1.6em;
+    background-color: $deep_purple;
+    color: $white;
+    width: 60%;
+    &:hover {
+      @include btn-hover();
+    }
+  }
+}
+
+//結果画面
+.result-container {
+  @include container();
+  padding: 1em;
+  h1 {
+    margin: 5% 0;
+    font-size: 2.8em;
+  }
+  .content {
+    margin-bottom: 5%;
+  }
+  .top-sentence {
+    margin-bottom: 3%;
+    font-size: 2em;
+  }
+  .two-result-container {
+    background-color: $deep_purple;
+    border-radius: 10px;
+    padding: 2% 0;
+    margin: 2% 0;
+    h2 {
+      color: $light_green;
+    }
+    ul {
+      margin: 3%;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.contact-container {
+  @include container();
+  padding: 2em;
+  h1 {
+    margin-bottom: 1em;
+  }
+  a {
+    color: $light_green;
+    &:hover {
+      color: $green;
+      transition: 0.3s;
+    }
+  }
+  img {
+    width: 60%;
+  }
+}
+
+.about-container {
+  @include container();
+  text-align: left;
+  padding: 2em;
+  h1 {
+    margin-bottom: 1em;
+  }
+  a {
+    color: $light_green;
+    &:hover {
+      color: $green;
+      transition: 0.3s;
+    }
+  }
+}
+
+///** スマホ **///
+@media screen and (max-width: 767px) {
+  .top-container {
+    padding-bottom: 6em;
+  }
+  .container {
+    width: 90%;
+  }
+  h1,
+  h2 {
+    font-size: 1em;
+  }
+  a,
+  p {
+    font-size: 0.8em;
+  }
+  #header-container {
+    height: 90px;
+    h1 {
+      font-size: 23px;
+      display: block;
+      text-align: center;
+    }
+    ul {
+      background-color: $red;
+      width: 100%;
+      margin: 0 auto;
+      line-height: 60px;
+      text-align: center;
+      font-size: 20px;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+    li {
+      margin: 0 auto;
+    }
+  }
+  .modes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .footer-container {
+    height: 5.5em;
+  }
+}
