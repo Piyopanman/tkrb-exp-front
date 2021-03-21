@@ -24,6 +24,9 @@ export const TwoResult: React.FC = () => {
   const myLocation = useLocation();
   const parsed = queryString.parse(myLocation.search);
 
+  parsed["saniwa"] = parsed["?saniwa"];
+  delete parsed["?saniwa"];
+
   const initialState: toukenDataIF = {
     touken: [
       {

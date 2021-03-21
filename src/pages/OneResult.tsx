@@ -26,6 +26,9 @@ export const OneResult: React.FC = () => {
 
   const [toukenData, setToukenData] = useState<toukenData>(initialState);
 
+  parsed["saniwa"] = parsed["?saniwa"];
+  delete parsed["?saniwa"];
+
   useEffect(() => {
     const func = async () => {
       const res = (await getToukenOne(parsed)) as toukenData;

@@ -26,7 +26,7 @@ export const Two: React.FC<Props> = (props) => {
 
   const onSubmit = (data: FormData) => {
     props.history.push(
-      `/two-result?saniwa=${data.saniwa}&touken1=${data.touken1}&level1=${data.level1}&touken2=${data.touken2}&level2=${data.level2}`
+      `/two-result/?saniwa=${data.saniwa}&touken1=${data.touken1}&level1=${data.level1}&touken2=${data.touken2}&level2=${data.level2}`
     );
   };
 

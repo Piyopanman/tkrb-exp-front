@@ -24,7 +24,7 @@ export const One: React.FC<Props> = (props) => {
 
   const onSubmit = (data: FormData) => {
     props.history.push(
-      `/one-result?saniwa=${data.saniwa}&touken=${data.touken}&level=${data.level}`
+      `/one-result/?saniwa=${data.saniwa}&touken=${data.touken}&level=${data.level}`
     );
   };
 
