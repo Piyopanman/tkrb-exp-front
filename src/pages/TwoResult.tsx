@@ -49,6 +49,7 @@ export const TwoResult: React.FC = () => {
       setToukenData(res);
     };
     func();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   var twitterText: string;

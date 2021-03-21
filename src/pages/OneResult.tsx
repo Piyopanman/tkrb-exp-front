@@ -32,6 +32,8 @@ export const OneResult: React.FC = () => {
       setToukenData(res);
     };
     func();
+    console.log("test");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const twitterText: string = `${parsed.saniwa}本丸の${toukenData.toukenName}の練度は根平糖${toukenData.konpeto}個分でした！`;

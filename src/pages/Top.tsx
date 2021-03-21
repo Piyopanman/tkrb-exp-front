@@ -19,7 +19,7 @@ export const Top: React.FC = () => {
   ];
   return (
     <div>
-      <img src={title} />
+      <img src={title} alt="title-logo" />
       <div className="modes-container">
         {modeProps.map((m) => (
           <Mode {...m} />

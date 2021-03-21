@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
         <br />
         応援コメントもお待ちしております！
       </p>
-      <img src={hiyoko} />
+      <img src={hiyoko} alt="piyopanman" />
     </div>
   );
 };
