@@ -39,10 +39,12 @@ export const Two: React.FC<Props> = (props) => {
   ];
 
   const [toukenList, setToukenList] = useState<ToukenList[]>(initialState);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     getToukenList().then((t) => {
       setToukenList(t);
+      setLoading(false);
     });
   }, []);
 
@@ -67,11 +69,17 @@ export const Two: React.FC<Props> = (props) => {
         <h1>刀剣情報 其の一</h1>
         <h2>刀剣名</h2>
         <select name="touken1" ref={register({ valueAsNumber: true })}>
-          {toukenList.map((t) => (
-            <option value={t.toukenID} key={t.key}>
-              {t.toukenName}
+          {loading ? (
+            <option disabled selected>
+              読み込み中
             </option>
-          ))}
+          ) : (
+            toukenList.map((t) => (
+              <option value={t.toukenID} key={t.key}>
+                {t.toukenName}
+              </option>
+            ))
+          )}
         </select>
         <h2>練度</h2>
         <select
@@ -88,11 +96,17 @@ export const Two: React.FC<Props> = (props) => {
         <h1>刀剣情報 其の二</h1>
         <h2>刀剣名</h2>
         <select name="touken2" ref={register({ valueAsNumber: true })}>
-          {toukenList.map((t) => (
-            <option value={t.toukenID} key={t.key}>
-              {t.toukenName}
+          {loading ? (
+            <option disabled selected>
+              読み込み中
             </option>
-          ))}
+          ) : (
+            toukenList.map((t) => (
+              <option value={t.toukenID} key={t.key}>
+                {t.toukenName}
+              </option>
+            ))
+          )}
         </select>
         <h2>練度</h2>
         <select
