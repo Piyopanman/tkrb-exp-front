@@ -38,7 +38,7 @@ export const OneResult: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const twitterText: string = `${parsed.saniwa}本丸の${toukenData.toukenName}の練度は根平糖${toukenData.konpeto}個分でした！`;
+  const twitterText: string = `${parsed.saniwa}本丸の${toukenData.toukenName}の練度は根兵糖${toukenData.konpeto}個分でした！`;
 
   return (
     <div className="result-container">
@@ -50,7 +50,7 @@ export const OneResult: React.FC = () => {
         練度が{parsed.level}で、累計経験値は{toukenData.exp}です！
       </h2>
       <h2 className="result-text">これは、</h2>
-      <h2 className="result-text">根平糖{toukenData.konpeto}個分</h2>
+      <h2 className="result-text">根兵糖{toukenData.konpeto}個分</h2>
       <h2 className="result-text">厚樫山約{toukenData.atsukashi}周分です！</h2>
       <div className="result-text twitter">
         <TwitterShareButton

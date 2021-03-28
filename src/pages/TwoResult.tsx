@@ -65,7 +65,7 @@ export const TwoResult: React.FC = () => {
   } else {
     twitterText = `${parsed.saniwa}本丸の${
       toukenData.touken[toukenData.lessGrown].toukenName
-    }は、根平糖${toukenData.diffKonpeto}個食べたら${
+    }は、根兵糖${toukenData.diffKonpeto}個食べたら${
       toukenData.touken[toukenData.moreGrown].toukenName
     }に追いつきます！`;
   }
@@ -89,7 +89,7 @@ export const TwoResult: React.FC = () => {
             {parsed.saniwa}本丸の
             {toukenData.touken[toukenData.lessGrown].toukenName}は
           </h2>
-          <h2>根平糖を{toukenData.diffKonpeto}個食べるか</h2>
+          <h2>根兵糖を{toukenData.diffKonpeto}個食べるか</h2>
           <h2>厚樫山を{toukenData.diffAtsukashi}周したら</h2>
           <h2>
             {toukenData.touken[toukenData.moreGrown].toukenName}に追いつきます！

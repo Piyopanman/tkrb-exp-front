@@ -15,7 +15,7 @@ export const Result: React.FC<Props> = (props: Props) => {
       <ul>
         <li>練度：{props.level}</li>
         <li>累計経験値：{props.exp}</li>
-        <li>根平糖：{props.konpeto}個分</li>
+        <li>根兵糖：{props.konpeto}個分</li>
         <li>厚樫山：{props.atsukashi}周分</li>
       </ul>
     </div>
