@@ -10,7 +10,7 @@ interface Props {
 
 export const Result: React.FC<Props> = (props: Props) => {
   return (
-    <div className="two-result-container">
+    <div className="two-result-container result-text">
       <h2>{props.toukenName}</h2>
       <ul>
         <li>練度：{props.level}</li>

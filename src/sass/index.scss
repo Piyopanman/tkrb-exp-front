@@ -185,8 +185,8 @@ li {
     margin: 5% 0;
     font-size: 2.8em;
   }
-  .content {
-    margin-bottom: 5%;
+  .twitter {
+    margin-top: 5%;
   }
   .top-sentence {
     margin-bottom: 3%;
@@ -288,5 +288,37 @@ li {
   }
   .footer-container {
     height: 6em;
+  }
+}
+
+//** アニメーション **//
+
+.result-text {
+  opacity: 0;
+}
+
+@mixin animationValue($name, $duration, $function, $delay, $count, $state) {
+  -webkit-animation: $name $duration + s $function $delay + s $count $state;
+  animation: $name $duration + s $function $delay + s $count $state;
+}
+
+@for $cnt from 1 through 8 {
+  .result-text:nth-child(#{$cnt}) {
+    @include animationValue(example, 1, ease, $cnt, 1, forwards);
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(example) {
+  100% {
+    opacity: 1;
   }
 }

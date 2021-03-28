@@ -72,37 +72,43 @@ export const TwoResult: React.FC = () => {
 
   return (
     <div className="result-container">
-      <h1>調査結果</h1>
-      <h2 className="top-sentence">{parsed.saniwa}本丸の...</h2>
+      <h1 className="result-text">調査結果</h1>
       {toukenData.isSameExp ? (
-        <h2 className="content">
-          {toukenData.touken[toukenData.lessGrown].toukenName}と
-          {toukenData.touken[toukenData.moreGrown].toukenName}
-          の練度は同じでした！
-        </h2>
+        <div className="result-text">
+          <h2>
+            {parsed.saniwa}本丸の
+            {toukenData.touken[toukenData.lessGrown].toukenName}と
+            {toukenData.touken[toukenData.moreGrown].toukenName}
+            の練度は
+          </h2>
+          <h2 className="top-sentence">同じでした！</h2>
+        </div>
       ) : (
-        <h2 className="content">
-          {toukenData.touken[toukenData.lessGrown].toukenName}は<br />
-          根平糖を{toukenData.diffKonpeto}個食べるか、
-          <br />
-          厚樫山を{toukenData.diffAtsukashi}周したら、
-          <br />
-          {toukenData.touken[toukenData.moreGrown].toukenName}に追いつきます！
-          <br />
-        </h2>
+        <div className="result-text">
+          <h2>
+            {parsed.saniwa}本丸の
+            {toukenData.touken[toukenData.lessGrown].toukenName}は
+          </h2>
+          <h2>根平糖を{toukenData.diffKonpeto}個食べるか</h2>
+          <h2>厚樫山を{toukenData.diffAtsukashi}周したら</h2>
+          <h2>
+            {toukenData.touken[toukenData.moreGrown].toukenName}に追いつきます！
+          </h2>
+        </div>
       )}
       {toukenData.touken.map((t) => (
         <Result key={t.toukenName} {...t} />
       ))}
-
-      <TwitterShareButton
-        title={twitterText}
-        hashtags={["とうらぶ練度チェッカー"]}
-        url={window.location.href}
-      >
-        <TwitterIcon size={32} round={true} />
-      </TwitterShareButton>
-      <p>↑Twitterで結果を共有↑</p>
+      <div className="result-text twitter">
+        <TwitterShareButton
+          title={twitterText}
+          hashtags={["とうらぶ練度チェッカー"]}
+          url={window.location.href}
+        >
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+        <p>↑Twitterで結果を共有↑</p>
+      </div>
     </div>
   );
 };

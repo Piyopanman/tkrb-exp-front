@@ -42,25 +42,26 @@ export const OneResult: React.FC = () => {
 
   return (
     <div className="result-container">
-      <h1>調査結果</h1>
-      <h2>
+      <h1 className="result-text">調査結果</h1>
+      <h2 className="result-text">
         {parsed.saniwa}本丸の{toukenData.toukenName}は
       </h2>
-      <h2 className="content">
-        練度が{parsed.level}で、累計経験値は{toukenData.exp}です！ <br />
-        これは、
-        <br /> 根平糖{toukenData.konpeto}個分、
-        <br />
-        厚樫山約{toukenData.atsukashi}周分です！
+      <h2 className="result-text">
+        練度が{parsed.level}で、累計経験値は{toukenData.exp}です！
       </h2>
-      <TwitterShareButton
-        title={twitterText}
-        hashtags={["とうらぶ練度チェッカー"]}
-        url={window.location.href}
-      >
-        <TwitterIcon size={32} round={true} />
-      </TwitterShareButton>
-      <p>↑Twitterで結果を共有↑</p>
+      <h2 className="result-text">これは、</h2>
+      <h2 className="result-text">根平糖{toukenData.konpeto}個分</h2>
+      <h2 className="result-text">厚樫山約{toukenData.atsukashi}周分です！</h2>
+      <div className="result-text twitter">
+        <TwitterShareButton
+          title={twitterText}
+          hashtags={["とうらぶ練度チェッカー"]}
+          url={window.location.href}
+        >
+          <TwitterIcon size={32} round={true} />
+        </TwitterShareButton>
+        <p>↑Twitterで結果を共有↑</p>
+      </div>
     </div>
   );
 };
