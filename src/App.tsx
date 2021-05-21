@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { One } from "./pages/One";
 import { OneResult } from "./pages/OneResult";
 import { TwoResult } from "./pages/TwoResult";
@@ -17,14 +17,16 @@ export const App: React.FC = () => {
       <Router>
         <Header />
         <div className="container">
-          <Route exact path="/" component={Top} />
-          <Route exact path="/one" component={One} />
-          <Route exact path="/two" component={Two} />
-          <Route exact path="/one-result" component={OneResult} />
-          <Route exact path="/two-result" component={TwoResult} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/about" component={About} />
-          <Route path="*" component={NoMatch} />
+          <Switch>
+            <Route exact path="/" component={Top} />
+            <Route exact path="/one" component={One} />
+            <Route exact path="/two" component={Two} />
+            <Route exact path="/one-result" component={OneResult} />
+            <Route exact path="/two-result" component={TwoResult} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/about" component={About} />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
         <Footer />
       </Router>
