@@ -25,6 +25,7 @@ export const OneResult: React.FC = () => {
   };
 
   const [toukenData, setToukenData] = useState<toukenData>(initialState);
+  const [error, setError] = useState<boolean>(false);
 
   parsed["saniwa"] = parsed["?saniwa"];
   delete parsed["?saniwa"];
@@ -32,6 +33,9 @@ export const OneResult: React.FC = () => {
   useEffect(() => {
     const func = async () => {
       const res = (await getToukenOne(parsed)) as toukenData;
+      if (res.exp === -1) {
+        setError(true);
+      }
       setToukenData(res);
     };
     func();
@@ -42,26 +46,34 @@ export const OneResult: React.FC = () => {
 
   return (
     <div className="result-container">
-      <h1 className="result-text">調査結果</h1>
-      <h2 className="result-text">
-        {parsed.saniwa}本丸の{toukenData.toukenName}は
-      </h2>
-      <h2 className="result-text">
-        練度が{parsed.level}で、累計経験値は{toukenData.exp}です！
-      </h2>
-      <h2 className="result-text">これは、</h2>
-      <h2 className="result-text">根兵糖{toukenData.konpeto}個分</h2>
-      <h2 className="result-text">厚樫山約{toukenData.atsukashi}周分です！</h2>
-      <div className="result-text twitter">
-        <TwitterShareButton
-          title={twitterText}
-          hashtags={["とうらぶ練度チェッカー"]}
-          url={window.location.href}
-        >
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <p>↑Twitterで結果を共有↑</p>
-      </div>
+      {error ? (
+        <h1>指定されたページが見つかりません。</h1>
+      ) : (
+        <>
+          <h1 className="result-text">調査結果</h1>
+          <h2 className="result-text">
+            {parsed.saniwa}本丸の{toukenData.toukenName}は
+          </h2>
+          <h2 className="result-text">
+            練度が{parsed.level}で、累計経験値は{toukenData.exp}です！
+          </h2>
+          <h2 className="result-text">これは、</h2>
+          <h2 className="result-text">根兵糖{toukenData.konpeto}個分</h2>
+          <h2 className="result-text">
+            厚樫山約{toukenData.atsukashi}周分です！
+          </h2>
+          <div className="result-text twitter">
+            <TwitterShareButton
+              title={twitterText}
+              hashtags={["とうらぶ練度チェッカー"]}
+              url={window.location.href}
+            >
+              <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <p>↑Twitterで結果を共有↑</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
