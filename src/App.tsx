@@ -9,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
+import { NoMatch } from "./pages/NoMatch";
 
 export const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ export const App: React.FC = () => {
           <Route exact path="/two-result" component={TwoResult} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
+          <Route path="*" component={NoMatch} />
         </div>
         <Footer />
       </Router>
