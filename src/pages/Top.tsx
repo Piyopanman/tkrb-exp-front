@@ -1,5 +1,6 @@
 import React from "react";
 import { Mode } from "../components/Mode";
+import { Notice } from "../components/Notice";
 import title from "../images/title02.png";
 
 export const Top: React.FC = () => {
@@ -20,6 +21,7 @@ export const Top: React.FC = () => {
   return (
     <div>
       <img src={title} alt="title-logo" />
+      <Notice />
       <div className="modes-container">
         {modeProps.map((m) => (
           <Mode {...m} />

@@ -108,6 +108,29 @@ li {
   }
 }
 
+//お知らせ
+.notice-title {
+  color: $purple;
+  text-align: center;
+}
+.notice-container {
+  background-color: $white;
+  border-radius: 10px;
+  text-align: center;
+  color: $purple;
+  padding: 2% 4%;
+  margin-bottom: 7%;
+  border: 3px solid $purple;
+  height: 100px;
+  overflow: scroll;
+  .date {
+    font-weight: bold;
+  }
+  .text {
+    margin-bottom: 2%;
+  }
+}
+
 //topページ
 .modes-container {
   padding: 5px 10px;
