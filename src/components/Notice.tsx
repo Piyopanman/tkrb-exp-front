@@ -20,6 +20,10 @@ export const Notice: React.FC = () => {
       date: "2021.06.09",
       text: "秘宝の里イベント開催に合わせて、篭手切江・松井江を実装",
     },
+    {
+      date: "2021.09.03",
+      text: "髭切、膝丸、鶴丸国永を実装",
+    },
   ];
   return (
     <div>
